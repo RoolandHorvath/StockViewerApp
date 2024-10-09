@@ -1,0 +1,52 @@
+<div class="stock-portfolio-container">
+    <div class="header-and-portfolio">
+        <h2>Manage Your Stock Portfolio</h2>
+
+        <!-- Portfolio List -->
+        <div class="portfolio-container">
+            <h4>Your Portfolio:</h4>
+            <ul class="portfolio-list">
+                <li *ngFor="let stock of portfolio">
+                    {{ stock.label }} - {{ stock.percentage }}%
+                    <button
+                        pButton
+                        type="button"
+                        icon="pi pi-times"
+                        class="p-button-danger"
+                        (click)="removeStock(stock)"
+                        label="Remove">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dropdown for Selecting Stocks -->
+    <div class="stock-selection">
+        <p-dropdown
+            [options]="stocks"
+            [(ngModel)]="selectedStock"
+            placeholder="Select a stock"
+            appendTo="body"
+            [optionLabel]="'label'"
+            [optionValue]="'value'"
+            (onChange)="onStockChange($event)">
+        </p-dropdown>
+
+        <!-- Input for percentage allocation -->
+        <input
+            type="number"
+            pInputText
+            placeholder="Percentage"
+            [(ngModel)]="stockPercentage"
+            class="percentage-input">
+
+        <!-- Button to add stock to portfolio -->
+        <button
+            pButton
+            type="button"
+            (click)="addStock()"
+            label="Add Stock"
+            class="add-stock-button"></button>
+    </div>
+</div>

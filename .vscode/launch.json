@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StockviewerApplication<stockviewer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.stockviewer.StockviewerApplication",
+            "projectName": "stockviewer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+<div class="stock-portfolio">
+    <h2>Manage Your Portfolio</h2>
+  
+    <div class="input-group">
+      <input
+        type="text"
+        placeholder="Search for a stock..."
+        [(ngModel)]="searchQuery"
+        (input)="filterStocks()"
+        class="form-control"
+      />
+      <select [(ngModel)]="selectedStock" class="form-select">
+        <option *ngFor="let stock of filteredStocks" [value]="stock">{{ stock }}</option>
+      </select>
+      <input
+        type="number"
+        [(ngModel)]="percentage"
+        placeholder="Percentage"
+        min="0"
+        max="100"
+        class="form-control"
+      />
+      <button (click)="addStock()" class="btn btn-primary">Add</button>
+    </div>
+  
+    <div class="portfolio-list">
+      <h3>Your Portfolio</h3>
+      <ul>
+        <li *ngFor="let stock of portfolio">
+          {{ stock.name }} - {{ stock.percentage }}%
+          <button (click)="removeStock(stock)" class="btn btn-danger btn-sm">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

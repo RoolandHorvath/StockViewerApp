@@ -1,0 +1,66 @@
+.stock-portfolio-container {
+  display: flex; // Use flexbox for layout
+  flex-direction: column; // Stack elements vertically
+  padding: 1rem;
+  background-color: #1d222b;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+
+  .header-and-portfolio {
+      display: flex; // Use flexbox for header and portfolio
+      justify-content: space-between; // Space out elements
+      align-items: center; // Align vertically centered
+
+      h2 {
+          margin-right: 1rem; // Space between header and portfolio
+          flex: 1; // Allow header to take available space
+      }
+
+      .portfolio-container {
+          display: flex; // Use flexbox for portfolio
+          flex-direction: column; // Stack header and list vertically
+          align-items: flex-start; // Align items to the start
+          margin-left: 1rem; // Add some space to the left
+      }
+  }
+
+  .stock-selection {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem; // Add margin between dropdown and header
+      position: relative;
+
+      .percentage-input {
+          margin-left: 1rem;
+          width: 80px;
+      }
+
+      .add-stock-button {
+          margin-left: 1rem;
+          background-color: #007bff;
+          color: white;
+
+          &:hover {
+              background-color: #0056b3;
+          }
+      }
+  }
+
+  .portfolio-list {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #ccc;
+
+          .p-button-danger {
+              margin-left: 1rem;
+          }
+      }
+  }
+}
